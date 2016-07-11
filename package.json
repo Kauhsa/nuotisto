@@ -1,0 +1,15 @@
+{
+  "name": "nuotisto",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.2.0",
+    "react-ace": "^3.5.0",
+    "react-addons-pure-render-mixin": "^15.2.0",
+    "react-dom": "^15.2.0",
+    "react-markdown": "^2.4.2"
+  }
+}

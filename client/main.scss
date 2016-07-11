@@ -1,0 +1,145 @@
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+$background: $base03;
+$secondary-background: $base02;
+$foreground: $base0;
+
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+
+*:not(.ace_editor) {
+  font-family: "PT Sans Narrow";
+}
+
+.ace_editor * {
+  font-family: inherit;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: $background;
+  color: $foreground;
+  height: 100%;
+}
+
+#render-target {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.topBar {
+  background-color: $secondary-background;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  h1, .editTitle {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    background: rgba(#586e75, 0);
+    border: none;
+    font-size: 32px;
+    font-weight: bold;
+    color: $base0;
+    margin-right: 15px;
+  }
+}
+
+button {
+  -webkit-appearance: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: $foreground;
+  color: $base03;
+  margin-left: 5px;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($foreground, 10);
+  }
+}
+
+input {
+  outline: none;
+}
+
+.songContents {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-x: auto;
+
+  h1 {
+    padding: 0.2em 0 0.2em 0;
+    margin: 0.2em 0 0.2em 0;
+    font-size: 100%;
+    border-bottom: 0.5px solid $foreground;
+  }
+
+  p {
+    margin: 0 0.5em 0 0;
+  }
+}
+
+#songEditor {
+  flex-grow: 1;
+  width: 100% !important;
+}
+
+.songList {
+  overflow-x: auto;
+  flex-grow: 1;
+
+  .song {
+    display: flex;
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($base02, 0.5);
+    }
+
+    .title {
+      flex-grow: 1;
+      padding: 10px 0;
+    }
+
+    .remove {
+      color: darken($background, 5) ;
+      padding: 10px 0;
+
+      &:hover {
+        color: $foreground;
+      }
+    }
+  }
+}

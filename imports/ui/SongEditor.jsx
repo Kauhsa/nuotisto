@@ -3,16 +3,22 @@ import brace from 'brace';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/markdown';
-import 'brace/theme/solarized_dark';
+import 'brace/theme/kr_theme';
 
 export default class SongEditor extends Component {
   render() {
     return (
       <AceEditor
         mode="markdown"
-        theme="solarized_dark"
+        theme="kr_theme"
         name="songEditor"
-        editorProps={{$blockScrolling: true}}
+        editorProps={{
+          $blockScrolling: true
+        }}
+        wrapEnabled={true}
+        height="100%"
+        width="100%"
+        showPrintMargin={false}
         value={this.props.contents}
         onChange={this.props.onChange}
       />

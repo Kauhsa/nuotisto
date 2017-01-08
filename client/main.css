@@ -11,8 +11,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #002b36;
-  color: #839496;
+  background-color: black;
+  color: white;
   height: 100%;
 }
 
@@ -27,7 +27,7 @@ html, body {
 }
 
 .topBar {
-  background-color: #073642;
+  background-color: #222;
   display: flex;
   align-items: center;
   padding: 5px 10px;
@@ -39,11 +39,11 @@ html, body {
   flex-grow: 1;
   margin: 0;
   padding: 0;
-  background: rgba(88, 110, 117, 0);
+  background: rgba(0,0,0,0);
   border: none;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: bold;
-  color: #839496;
+  color: white;
   margin-right: 15px;
 }
 
@@ -53,16 +53,16 @@ button {
   padding: 5px 10px;
   border-radius: 10px;
   font-weight: bold;
-  background-color: #839496;
-  color: #002b36;
+  background-color: #333;
+  color: white;
   margin-left: 5px;
-  font-size: 20px;
+  font-size: 11px;
   outline: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #9facad;
+  background-color: #444;
 }
 
 input {
@@ -101,12 +101,12 @@ input {
   padding: 0 10px;
   font-size: 20px;
   font-weight: bold;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #111;
   cursor: pointer;
 }
 
 .songList .song:hover {
-  background-color: rgba(7, 54, 66, 0.5);
+  background-color: #111;
 }
 
 .songList .song .title {
@@ -115,10 +115,10 @@ input {
 }
 
 .songList .song .remove {
-  color: #00171d;
+  color: #666;
   padding: 10px 0;
 }
 
 .songList .song .remove:hover {
-  color: #839496;
+  color: #777;
 }

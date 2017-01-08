@@ -30,27 +30,15 @@ export default class SongView extends Component {
   }
 
   getTitle() {
-    if (this.props.isEditing && this.props.song !== undefined) {
-      return <input className="editTitle" value={this.getSongTitle()} onChange={(a) => { this.updateTitle(a.target.value) }} />
-    } else {
-      return <h1>{this.getSongTitle()}</h1>
+    if (this.props.song === undefined) {
+        return <h1>??</h1>
+      } else {
+        return <input className="editTitle" value={this.getSongTitle()} onChange={(a) => { this.updateTitle(a.target.value) }} />
     }
   }
 
   getContents() {
-    if (this.props.isEditing) {
-      return <SongEditor contents={this.getSongContents()} onChange={(contents) => this.updateContents(contents)} />
-    } else {
-      return <div className="songContents"><ReactMarkdown softBreak="br" source={this.getSongContents()} /></div>
-    }
-  }
-
-  getToggleEditButtonString() {
-    if (this.props.isEditing) {
-      return "Poistu";
-    } else {
-      return "Muokkaa";
-    }
+    return <SongEditor contents={this.getSongContents()} onChange={(contents) => this.updateContents(contents)} />
   }
 
   render() {
@@ -58,7 +46,6 @@ export default class SongView extends Component {
       <div className="container">
         <div className="topBar">
           { this.getTitle() }
-          <button onClick={this.props.onToggleEdit}>{ this.getToggleEditButtonString() }</button>
           <button onClick={this.props.onGoToSongSelector}>Biisit</button>
         </div>
         { this.getContents() }

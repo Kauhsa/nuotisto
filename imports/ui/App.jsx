@@ -11,8 +11,7 @@ class App extends Component {
 
     this.state = {
       selectedSong: undefined,
-      showSongSelector: true,
-      isEditing: false
+      showSongSelector: true
     }
   }
 
@@ -22,11 +21,7 @@ class App extends Component {
 
   createNewSong() {
     var newSongId = Songs.insert({ title: "(untitled)", contents: "" })
-    this.setState({ selectedSong: newSongId, showSongSelector: false, isEditing: true })
-  }
-
-  toggleEdit() {
-    this.setState({ isEditing: !this.state.isEditing })
+    this.setState({ selectedSong: newSongId, showSongSelector: false })
   }
 
   goToSongSelector() {
@@ -38,12 +33,10 @@ class App extends Component {
       return <SongSelector
         songs={this.props.songs}
         onNewSong={() => this.createNewSong()}
-        onSongSelect={(selectedSong) => this.setState({ selectedSong: selectedSong, showSongSelector: false, isEditing: false })} />
+        onSongSelect={(selectedSong) => this.setState({ selectedSong: selectedSong, showSongSelector: false })} />
     } else {
       return <SongView
-        isEditing={this.state.isEditing}
         song={this.getSelectedSong()}
-        onToggleEdit={() => this.toggleEdit()}
         onGoToSongSelector={() => this.goToSongSelector()} />
     }
   }
